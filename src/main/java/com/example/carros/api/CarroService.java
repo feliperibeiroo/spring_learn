@@ -3,19 +3,16 @@ package com.example.carros.api;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class CarroService {
+	@Autowired
+	private carroRepository rep;
 	
-	public List<Carro> getCarros(){
-		List<Carro> carros = new ArrayList<>();
-		
-		carros.add(Carro(1L, "Fusca"));
-		carros.add(Carro(2L, "Gol"));
-		carros.add(Carro(3L, "Brasília"));
-		
-		return carros;
+	public Iterable<Carro> getCarros(){
+		return rep.findAll();
 	}
 	
 }
