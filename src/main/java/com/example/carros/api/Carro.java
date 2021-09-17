@@ -1,19 +1,22 @@
 package com.example.carros.api;
 
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
-import org.springframework.data.annotation.Id;
+import javax.persistence.Id;
 
 
+@Entity
 public class Carro {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	private String nome;
 	
-	public Carro(long id, String nome) {
-		this.id = id;
-		this.nome = nome;
+	public Carro() {
+		
 	}
 	
 	public String getNome() {

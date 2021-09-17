@@ -8,8 +8,9 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class CarroService {
+	
 	@Autowired
-	private carroRepository rep;
+	private CarroRepository rep;
 	
 	public Iterable<Carro> getCarros(){
 		return rep.findAll();
